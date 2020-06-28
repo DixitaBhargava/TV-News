@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLf-i0-1Al">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="N7a-Y2-wWr">
+            <objects>
+                <collectionViewController storyboardIdentifier="News" id="po6-SQ-gN5" customClass="ViewController" customModule="TV_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LyB-v2-3Xc">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="100" minimumInteritemSpacing="80" id="wWj-Zr-7HD">
+                            <size key="itemSize" width="375" height="375"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="80" minY="80" maxX="80" maxY="80"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="iVc-tK-Qzb" customClass="NewsCell" customModule="TV_News" customModuleProvider="target">
+                                <rect key="frame" x="80" y="80" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5XG-L5-5qs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryf-ex-7fB" customClass="RemoteImageView" customModule="TV_News" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="210" id="VYr-KI-4Fs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a long news story title with lots of text inside" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlj-dk-VCX">
+                                            <rect key="frame" x="0.0" y="225" width="375" height="138"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ryf-ex-7fB" firstAttribute="leading" secondItem="5XG-L5-5qs" secondAttribute="leading" id="1gt-7N-oPw"/>
+                                        <constraint firstItem="ryf-ex-7fB" firstAttribute="top" secondItem="5XG-L5-5qs" secondAttribute="top" id="7sX-GZ-1pi"/>
+                                        <constraint firstItem="Xlj-dk-VCX" firstAttribute="leading" secondItem="5XG-L5-5qs" secondAttribute="leading" id="E2s-6W-2cH"/>
+                                        <constraint firstAttribute="trailing" secondItem="Xlj-dk-VCX" secondAttribute="trailing" id="Jn9-Gp-qzp"/>
+                                        <constraint firstItem="Xlj-dk-VCX" firstAttribute="top" secondItem="ryf-ex-7fB" secondAttribute="bottom" constant="15" id="dHU-o1-Sbk"/>
+                                        <constraint firstAttribute="trailing" secondItem="ryf-ex-7fB" secondAttribute="trailing" id="e1Y-dp-jRD"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="ryf-ex-7fB" id="OB9-E7-8mt"/>
+                                    <outlet property="textLabel" destination="Xlj-dk-VCX" id="5rF-ds-xxg"/>
+                                    <outlet property="unfocusedConstraint" destination="dHU-o1-Sbk" id="S9W-9k-MV3"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="po6-SQ-gN5" id="h11-qQ-Jj7"/>
+                            <outlet property="delegate" destination="po6-SQ-gN5" id="fmY-5C-q9B"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" id="rNl-h1-G5Q"/>
+                    <connections>
+                        <outlet property="tabBarObservedScrollView" destination="LyB-v2-3Xc" id="pL7-tH-I4n"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFo-3o-aXo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2504" y="-236"/>
+        </scene>
+        <!--Reader View Controller-->
+        <scene sceneID="jgJ-kB-RbV">
+            <objects>
+                <viewController storyboardIdentifier="Reader" id="l4L-ZN-thm" customClass="ReaderViewController" customModule="TV_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I2y-w4-26w"/>
+                        <viewControllerLayoutGuide type="bottom" id="9WP-lu-dco"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gbb-48-VgV">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-sF-tCl">
+                                <rect key="frame" x="100" y="80" width="1700" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWw-j6-ZnJ" customClass="RemoteImageView" customModule="TV_News" customModuleProvider="target">
+                                <rect key="frame" x="100" y="310" width="375" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4V-g2-Oip">
+                                <rect key="frame" x="535" y="280" width="1300" height="800"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Olw-Wv-6gZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="body" destination="e4V-g2-Oip" id="wp0-OQ-t4R"/>
+                        <outlet property="headline" destination="bcC-sF-tCl" id="wfd-Cy-nMu"/>
+                        <outlet property="imageView" destination="XWw-j6-ZnJ" id="e59-Sw-5OO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RO-xj-T1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="1312"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jP2-UU-wJm">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RLf-i0-1Al" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5aQ-nH-3Ac">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GF-mq-f2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="-236"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loading" width="375" height="210"/>
+    </resources>
+</document>
